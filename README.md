@@ -1,11 +1,11 @@
 # set-height-elements
 
-[![npm](https://img.shields.io/npm/v/set-height-elements?color=check&style=plastic)](https://www.npmjs.com/package/set-height-elements)
-[![npm bundle size](https://img.shields.io/bundlephobia/min/set-height-elements?style=plastic)](https://www.npmjs.com/package/set-height-elements)
-
 Script para colocar la altura maxima entre el conjunto de elementos.
 
 La principal función de este script es hacer que todos los elementos pasados tengan la misma altura (por ejemplo, muchos cards en un slider, o un grid).
+
+[![npm](https://img.shields.io/npm/v/set-height-elements?color=check&style=plastic)](https://www.npmjs.com/package/set-height-elements)
+[![npm bundle size](https://img.shields.io/bundlephobia/min/set-height-elements?style=plastic)](https://www.npmjs.com/package/set-height-elements)
 
 ## Demo
 

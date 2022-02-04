@@ -6,15 +6,23 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soyleninjs/set-height-elements.git"
+  },
   "keywords": [
-    "javscript",
-    "css variables",
-    "height elements",
+    "set-height",
+    "set",
     "height",
     "elements",
-    "html",
-    "css"
+    "css",
+    "javascript",
+    "js"
   ],
-  "author": "@soyleninjs",
-  "license": "ISC"
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soyleninjs/set-height-elements/issues"
+  },
+  "homepage": "https://github.com/soyleninjs/set-height-elements#readme"
 }

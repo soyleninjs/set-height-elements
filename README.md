@@ -6,11 +6,13 @@ La principal función de este script es hacer que todos los elementos pasados te
 
 [![npm](https://img.shields.io/npm/v/set-height-elements?color=check&style=plastic)](https://www.npmjs.com/package/set-height-elements)
 
-## Demo
+## Contenido
 
-**[Codepen](https://codepen.io/soyleninjs/pen/PoKMxGV)**
+- [Instalar](#Instalar)
+- [Demo](#Demo)
+- [Parámentros](#Parámentros)
 
-## Install
+## Instalar
 
 **Set Height Elements** esta disponible en NPM con el nombre de `set-height-elements`, se puede instalar con Yarn o NPM
 
@@ -21,6 +23,10 @@ yarn add set-height-elements
 ```sh
 npm i set-height-elements
 ```
+
+## Demo
+
+**[Codepen](https://codepen.io/soyleninjs/pen/PoKMxGV)**
 
 ## Parámentros
 

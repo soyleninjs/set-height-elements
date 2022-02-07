@@ -1,6 +1,6 @@
 {
   "name": "set-height-elements",
-  "version": "1.0.3",
+  "version": "1.0.31",
   "description": "Script para colocar la altura maxima entre el conjunto de elementos.",
   "main": "js/set-height-elements.js",
   "scripts": {

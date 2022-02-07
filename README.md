@@ -1,15 +1,26 @@
-# set-height-elements
+# Set Height Elements
 
 Script para colocar la altura maxima entre el conjunto de elementos.
 
 La principal función de este script es hacer que todos los elementos pasados tengan la misma altura (por ejemplo, muchos cards en un slider, o un grid).
 
 [![npm](https://img.shields.io/npm/v/set-height-elements?color=check&style=plastic)](https://www.npmjs.com/package/set-height-elements)
-[![npm bundle size](https://img.shields.io/bundlephobia/min/set-height-elements?style=plastic)](https://www.npmjs.com/package/set-height-elements)
 
 ## Demo
 
 **[Codepen](https://codepen.io/soyleninjs/pen/PoKMxGV)**
+
+## Install
+
+**Set Height Elements** esta disponible en NPM con el nombre de `set-height-elements`, se puede instalar con Yarn o NPM
+
+```sh
+yarn add set-height-elements
+```
+
+```sh
+npm i set-height-elements
+```
 
 ## Parámentros
 
@@ -54,7 +65,7 @@ La principal función de este script es hacer que todos los elementos pasados te
   - **classElementToOmit [Optional] [String]**
     Este parámetro recibe el nombre de la clase que comparten los elementos en el array, es decir, esta clase se usa para saltar aquel elemento que contenga esta clase, así se omite y no es contemplado para checar su altura.
     ```javascript
-    const classElementToOmit = "title-wrapper-omit";
+    const classElementToOmit = "element-class-to-omit";
     ```
   - **init [Optional] [function]**
     Este parámetro para pasar una función callback el cual retorna el valor que se asigno a los elementos justo desde de la primer inicializacion.

@@ -1,5 +1,4 @@
 /* eslint-disable promise/catch-or-return, no-empty-function, no-unused-vars */
-/* set-height-elements.js v1.0.0 */
 
 const setHeightElements = (nodeElementsArray, newOptions = {}) => {
   // ------------------------ VARAIBLES ------------------------

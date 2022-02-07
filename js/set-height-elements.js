@@ -4,14 +4,14 @@ const setHeightElements = (nodeElementsArray, newOptions = {}) => {
   // ------------------------ VARAIBLES ------------------------
 
   let firstExecution = false;
-  const defaultOptions = {
+  const finalOptions = {
     cssVariable: "--max-value",
     gridOptions: null,
     classElementToOmit: "",
     init: (data) => {},
     afterResize: (data) => {},
+    ...newOptions,
   };
-  const finalOptions = { ...defaultOptions, ...newOptions };
 
   // ------------------------ END VARAIBLES ------------------------
 

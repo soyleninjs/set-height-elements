@@ -46,6 +46,11 @@ npm i set-height-elements
     afterResize: (data) => {},
   };
   ```
+  - **initialIndex [Optional] [Number]**
+    Este campo ayuda a que el script inicie en determinada posición del array, es decir, que inicie a partir de determinada posición, así evitando configurar elementos que este por detrás de esta posición inicial.
+    ```javascript
+    const initialIndex = 0;
+    ```
   - **cssVariable [Optional] [String]**
     Este campo sirve para colocar la variable la cual tendrá el valor del calculo de todas las alturas de entre todos los elementos del array. Esta variable se coloca en todos los elementos examinados.
     ```javascript

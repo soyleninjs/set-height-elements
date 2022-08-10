@@ -5,9 +5,10 @@ const setHeightElements = (nodeElementsArray, newOptions = {}) => {
 
   let firstExecution = false;
   const finalOptions = {
-    cssVariable: "--max-value",
+    cssVariable: '--max-value',
     gridOptions: null,
-    classElementToOmit: "",
+    initialIndex: 0,
+    classElementToOmit: '',
     init: (data) => {},
     afterResize: (data) => {},
     ...newOptions,
@@ -27,19 +28,30 @@ const setHeightElements = (nodeElementsArray, newOptions = {}) => {
     }
   };
 
-  const setMaxHeightElements = (elements) => {
+  const setMaxHeightElements = () => {
     let maxValue = 0;
 
     if (finalOptions.gridOptions == null) {
       maxValue = 0;
+      const elements = [...nodeElementsArray].filter((element, index) => {
+        if (finalOptions.initialIndex > 0) {
+          if (index >= finalOptions.initialIndex) {
+            return element;
+          }
+        } else {
+          return element;
+        }
 
-      elements.forEach((element) => {
+        return false;
+      });
+
+      elements.forEach((element, index) => {
         element.style.setProperty(finalOptions.cssVariable, `unset`);
       });
 
-      elements.forEach((element) => {
+      elements.forEach((element, index) => {
         const elementToOmit = element.classList.contains(
-          finalOptions.classElementToOmit
+          finalOptions.classElementToOmit,
         );
 
         if (element.offsetHeight > maxValue && !elementToOmit) {
@@ -47,20 +59,30 @@ const setHeightElements = (nodeElementsArray, newOptions = {}) => {
         }
       });
 
-      elements.forEach((element) => {
+      elements.forEach((element, index) => {
         element.style.setProperty(finalOptions.cssVariable, `${maxValue}px`);
       });
 
       setCallbacks(maxValue);
     } else {
-      const arrayElements = Array.from(elements);
       const groupsElements = [];
       const arrayData = [];
       let columns = finalOptions.gridOptions.defaultColumns;
+      const arrayElements = [...nodeElementsArray].filter((element, index) => {
+        if (finalOptions.initialIndex > 0) {
+          if (index >= finalOptions.initialIndex) {
+            return element;
+          }
+        } else {
+          return element;
+        }
+
+        return false;
+      });
 
       if (columns === undefined) {
         window.console.error(
-          "Coloca el valor de 'defaultColumns' para el correcto funcionamiento"
+          "Coloca el valor de 'defaultColumns' para el correcto funcionamiento",
         );
         return;
       }
@@ -86,13 +108,13 @@ const setHeightElements = (nodeElementsArray, newOptions = {}) => {
       groupsElements.forEach((group) => {
         maxValue = 0;
 
-        group.forEach((element) => {
+        group.forEach((element, index) => {
           element.style.setProperty(finalOptions.cssVariable, `unset`);
         });
 
-        group.forEach((element) => {
+        group.forEach((element, index) => {
           const elementToOmit = element.classList.contains(
-            finalOptions.classElementToOmit
+            finalOptions.classElementToOmit,
           );
 
           if (element.offsetHeight > maxValue && !elementToOmit) {
@@ -100,7 +122,7 @@ const setHeightElements = (nodeElementsArray, newOptions = {}) => {
           }
         });
 
-        group.forEach((element) => {
+        group.forEach((element, index) => {
           element.style.setProperty(finalOptions.cssVariable, `${maxValue}px`);
         });
 
@@ -115,17 +137,14 @@ const setHeightElements = (nodeElementsArray, newOptions = {}) => {
 
   // ------------------------ INIT ------------------------
 
-  document.fonts.ready.then(() => {
-    setMaxHeightElements(nodeElementsArray);
-  });
+  document.fonts.ready.then(setMaxHeightElements);
 
   // ------------------------ END INIT ------------------------
 
   // ------------------------ EVENTS ------------------------
 
-  window.addEventListener("resize", () => {
-    setMaxHeightElements(nodeElementsArray);
-  });
+  window.removeEventListener('resize', setMaxHeightElements);
+  window.addEventListener('resize', setMaxHeightElements);
 
   // ------------------------ END EVENTS ------------------------
 };

@@ -1,5 +1,4 @@
 
-
 # Set Height Elements
 
 
@@ -47,7 +46,13 @@ npm i set-height-elements
 ## Funcionamiento
 
 
-Para inicializar el script solo basta con crear una instancia de ella, pasando los parámetros correspondientes, como el array de los elementos y opcionalmente las configuraciones que desee agregar.
+Primero hay que importar el modulo:
+
+```javascript
+  import SetHeightElements from "set-height-elements";
+```
+
+Despues, solo basta con crear una instancia de ella, pasando los parámetros correspondientes, como el array de los elementos y opcionalmente las configuraciones que desee agregar.
 
 
 ```javascript
@@ -81,6 +86,14 @@ Para inicializar el script solo basta con crear una instancia de ella, pasando l
 
 ```
 
+**NOTA:** al importar el modulo al menos una vez, este tambien crear un objeto global en window, bajo el nombre de **SHE**, el cual tiene el modulo para crear instancias en cualquier lugar de la pagina, y en este mismo tambien se alojan las instancias creadas.
+
+```javascript
+  window.SHE = window.SHE || {
+    Init: SetHeightElements,
+    Instances: [],
+  };
+```
 
 ## Parámentros
 
@@ -101,15 +114,16 @@ Para inicializar el script solo basta con crear una instancia de ella, pasando l
     ```javascript
     const options = {
       autoInit: true,
-      cssVariable: '--max-value',
+      cssVariable: '--height',
+      debug: false,
       gridOptions: null,
       initialIndex: 0,
       classElementToOmit: '',
       on: {
         init: (data, instance) => {},
-        afterResize: (data) => {},
-        afterChanges: (data) => {},
-        afterUpdate: (data) => {},
+        afterResize: (data, instance) => {},
+        afterChanges: (data, instance) => {},
+        afterUpdate: (data, instance) => {},
         afterDestroy: (instance) => {},
       },
     };
@@ -124,15 +138,21 @@ Para inicializar el script solo basta con crear una instancia de ella, pasando l
       const autoInit = true;
       ```
 
-
     - **cssVariable [Optional] [String]**
       Este campo sirve para colocar la variable la cual tendrá el valor del cálculo de todas las alturas de entre todos los elementos del array. Esta variable se coloca en todos los elementos examinados.
 
 
       ```javascript
-      const cssVariable = "--max-value";
+      const cssVariable = "--height";
       ```
 
+    - **debug [Optional] [Boolean]**
+      Con este campo puedes activar mensajes de ayuda en consola, se lanzaran mensajes para cada proceso que este ocurriendo durante el ciclo de vida de la instancia.
+
+
+      ```javascript
+      const autoInit = true;
+      ```
 
     - **gridOptions [Optional - Only for grid] [Object]**
       Este parámetro se utiliza solo cuando el layout es un grid. Este es un objeto con dos propiedades los cuales contendrán información como las columnas default, los breakpoints y cuantas columnas hay en cada medida.
@@ -299,20 +319,6 @@ Para inicializar el script solo basta con crear una instancia de ella, pasando l
     ```javascript
       myInstance.stopChangesObserver()
     ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

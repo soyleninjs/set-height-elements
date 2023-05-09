@@ -1,15 +1,12 @@
 {
   "name": "set-height-elements",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Script para colocar la altura maxima entre un conjunto de elementos.",
   "main": "js/set-height-elements.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/soyleninjs/set-height-elements.git"
-  },
+  "repository": "git+https://github.com/soyleninjs/set-height-elements.git",
   "keywords": [
     "set-height",
     "set",
